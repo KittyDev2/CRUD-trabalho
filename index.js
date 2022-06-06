@@ -143,9 +143,16 @@ app.post('/person', async (req, res) => {
   app.patch('/person/:id', async (req, res) => {
     const id = req.params.id
   
-    const { brand, model, carYear, category, numberPlate, color, approved } = req.body
+    const {nome, cpf, dataNascimento, email, conta, endereco, cep, brand, model, carYear, category, numberPlate, color, approved } = req.body
   
     const person = {
+      nome,
+      cpf,
+      dataNascimento,
+      email,
+      conta,
+      endereco,
+      cep,
       brand,
       model,
       carYear,
