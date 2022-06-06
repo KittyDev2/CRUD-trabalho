@@ -27,6 +27,41 @@ app.post('/person', async (req, res) => {
         return
     }
 
+    if (!cpf) {
+        res.status(422).json({error: 'O campo CPF é obrigatório!'})
+        return
+    }
+
+    if (!dataNascimento) {
+        res.status(422).json({error: 'O campo Data de Nascimento é obrigatório!'})
+        return
+    }
+
+    if (!email) {
+        res.status(422).json({error: 'O campo Email é obrigatório!'})
+        return
+    }
+
+    if (!conta) {
+        res.status(422).json({error: 'O campo Conta é obrigatório!'})
+        return
+    }
+
+    if (!endereco) {
+        res.status(422).json({error: 'O campo Endereço é obrigatório!'})
+        return
+    }
+
+    if (!cep) {
+        res.status(422).json({error: 'O campo CEP é obrigatório!'})
+        return
+    }
+
+    if (!brand) {
+        res.status(422).json({error: 'O campo Marca é obrigatório!'})
+        return
+    }
+
     if (!model) {
         res.status(422).json({error: 'O campo Modelo é obrigatório!'})
         return
@@ -52,11 +87,6 @@ app.post('/person', async (req, res) => {
         return
     }
 
-    if (!color) {
-        res.status(422).json({error: 'O campo Cor é obrigatório!'})
-        return
-    }
-  
     const person = {
       nome,
       cpf,
