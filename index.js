@@ -20,39 +20,51 @@ app.use(
 
 // rotas
 app.post('/person', async (req, res) => {
-    const { brand, model, carYear, category, numberPlate, color, approved } = req.body
+    const {nome, cpf, dataNascimento, email, conta, endereco, cep, brand, model, carYear, category, numberPlate, color, approved } = req.body
 
-    if (!brand) {
-        res.status(422).json({error: 'O campo da Marca é obrigatório!'})
+    if (!nome) {
+        res.status(422).json({error: 'O campo Nome é obrigatório!'})
         return
     }
 
     if (!model) {
-        res.status(422).json({error: 'O campo do Modelo é obrigatório!'})
+        res.status(422).json({error: 'O campo Modelo é obrigatório!'})
         return
     }
 
     if (!carYear) {
-        res.status(422).json({error: 'O campo do Ano do carro é obrigatório!'})
+        res.status(422).json({error: 'O campo Ano do carro é obrigatório!'})
         return
     }
 
     if (!category) {
-        res.status(422).json({error: 'O campo da Categoria é obrigatório!'})
+        res.status(422).json({error: 'O campo Categoria é obrigatório!'})
         return
     }
 
     if (!numberPlate) {
-        res.status(422).json({error: 'O campo do Numero da Placa é obrigatório!'})
+        res.status(422).json({error: 'O campo Numero da Placa é obrigatório!'})
         return
     }
 
     if (!color) {
-        res.status(422).json({error: 'O campo da Cor é obrigatório!'})
+        res.status(422).json({error: 'O campo Cor é obrigatório!'})
+        return
+    }
+
+    if (!color) {
+        res.status(422).json({error: 'O campo Cor é obrigatório!'})
         return
     }
   
     const person = {
+      nome,
+      cpf,
+      dataNascimento,
+      email,
+      conta,
+      endereco,
+      cep,
       brand,
       model,
       carYear,
